@@ -59,9 +59,10 @@ async def get_app_access_token():
 # -----------------------
 # 🩺 Health check
 # -----------------------
-@app.get("/health")
-async def health():
-    return {"status": "ok"}
+@app.get("/healthz")
+def health_check():
+    """Lightweight endpoint for uptime checks."""
+    return {"ok": True}
 
 # -----------------------
 # ⚡ Fast GET endpoint
